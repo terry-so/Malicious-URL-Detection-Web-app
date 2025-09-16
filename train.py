@@ -1,12 +1,14 @@
 from src.feature_extract import feature_extraction
 import pandas as pd
 from pycaret.classification import ClassificationExperiment
-
+import argparse
 
 def train(csv_file_path, model_filename):
-    df = pd.read_csv(csv_file_path)
-    df = feature_extraction(df)
-
+    raw_df = pd.read_csv(csv_file_path)
+    label = raw_df.iloc[:,-1]
+    df = feature_extraction(raw_df)
+    df['label'] = label
+    print(df)
     exp = ClassificationExperiment()
     exp.setup(data = df, target = 'label', numeric_features=['url_length','alphabet_ratio','digit_ratio','non_alphanumeric_ratio',
                                                        'dot_count','dash_count','underscore_count','underscore_count','q_mark_count','percentage_count'],
@@ -36,5 +38,9 @@ def train(csv_file_path, model_filename):
 
 
 if __name__ == '__main__':
-    
-    train('data/clean_data.csv', 'extra_tree_v1')
+
+    parser = argparse.ArgumentParser(description='train model, input csv path and model name')
+    parser.add_argument('path', type=str, help='csv file path')
+    parser.add_argument('model_name', type=str, help='desired model name')
+    args = parser.parse_args()
+    train(args.path, args.model_name)
