@@ -15,7 +15,7 @@ user_url = st.text_input("Enter URL here:", placeholder="e.g., http://google.com
 
 if st.button("Check URL"):
     if user_url: 
-        api_url = "https://terryso0305-malicious-url-detector-webapp.hf.space"
+        api_url = "https://terryso0305-malicious-url-detector-webapp.hf.space/predict"
         payload = {"domain": user_url}
         st.write("Sending URL to the model for prediction...")
         response = requests.post(api_url, json=payload)
