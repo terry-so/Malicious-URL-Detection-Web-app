@@ -15,14 +15,14 @@ user_url = st.text_input("Enter URL here:", placeholder="e.g., http://google.com
 
 if st.button("Check URL"):
     if user_url: 
-        api_url = "http://127.0.0.1:8080/predict"
+        api_url = "https://malicious-url-detection-web-app.onrender.com"
         payload = {"domain": user_url}
         st.write("Sending URL to the model for prediction...")
         response = requests.post(api_url, json=payload)
         result = response.json()
         prediction = result.get("prediction")
 
-        st.write("") # Add a little space
+        st.write("")
         if prediction == "Malicious":
             st.error(f"**Prediction:** This URL is likely **{prediction}**!")
         else:
