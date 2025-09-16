@@ -25,7 +25,9 @@ class URL(BaseModel):
 
 app = FastAPI()
 
-
+@app.get("/")
+def read_root():
+    return {"message": "Malicious URL Detector API is running!"}
 
 @app.post("/predict")
 def predict(data: URL):
