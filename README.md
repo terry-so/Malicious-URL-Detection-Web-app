@@ -1,10 +1,1 @@
----
-title: Malicious URL Detector Webapp
-emoji: 📊
-colorFrom: purple
-colorTo: indigo
-sdk: docker
-pinned: false
----
-
-Check out the configuration reference at https://huggingface.co/docs/hub/spaces-config-reference
+https://malicious-url-detection-web-app-terry-so.streamlit.app/
