@@ -11,6 +11,7 @@ A web application that uses an extra-tree model to detect malicious URLs in real
 ## 🚀 Live Demo
 
 You can try out the live application here: **https://malicious-url-detection-web-app-terry-so.streamlit.app/**
+**Note: It may take 2-3 minutes to wake up the server using it for the first time (due to free hosting).** 
 
 
 
