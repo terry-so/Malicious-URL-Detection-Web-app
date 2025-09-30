@@ -6,12 +6,15 @@
 
 A web application that uses an extra-tree model to detect malicious URLs in real-time. This project covers the full process: training a model, finding the best hyperparameters, and deploying it as a live web application that anyone can use.
 ---
+---
 
 ![Project Demo](demo.gif)
 
 ---
 
 ## 🚀 Live Demo
+---
+---
 
 You can try out the live application here: **https://malicious-url-detection-web-app-terry-so.streamlit.app/**
 ---
